@@ -33,14 +33,10 @@ public class WebStepsTest {
         $(linkText(repo)).click();
 
     }
-    @Step("Открываем вкладку issue")
-    public void openIssuesTab() {
-        $(partialLinkText("Issues")).click();
 
-    }
-    @Step("Проверяем, что есть Issue под номером {number}")
-    public void shouldSeeSomeIssue(int number) {
-        $(withText("#" + number)).should(Condition.visible);
+    @Step("Проверяем, что есть Issue есть на страничке")
+    public void shouldSeeSomeIssue() {
+        $("#issues-tab").should(Condition.visible);
 
     }
     @Attachment(value = "My screen", type = "image/png", fileExtension =".png")

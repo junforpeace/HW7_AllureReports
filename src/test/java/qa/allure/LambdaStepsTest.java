@@ -1,5 +1,6 @@
 package qa.allure;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.Allure;
@@ -18,9 +19,7 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class LambdaStepsTest {
 
-    public static final String REPO = "eroshenkoam/allure-example";
-    public static final int ISSUE_NUMBER = 76;
-
+    public static final String REPO = "junforpeace/HW7_AllureReports";
 
 
     @Test
@@ -41,8 +40,8 @@ public class LambdaStepsTest {
             $(linkText(REPO)).click();
             $(partialLinkText("Issues")).click();
         });
-        step("Находим Issue под номером " + ISSUE_NUMBER, () -> {
-            $(withText("#76")).click();
+        step("Находим Issue", () -> {
+            $("#issues-tab").should(Condition.visible);
             Allure.getLifecycle().addAttachment(
                     "PageSource",
                     "text/html",

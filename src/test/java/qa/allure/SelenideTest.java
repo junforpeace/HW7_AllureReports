@@ -1,5 +1,6 @@
 package qa.allure;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Test;
@@ -21,12 +22,11 @@ public class SelenideTest {
 
         open("https://github.com");
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys("eroshenkoam/allure-example");
+        $(".header-search-input").sendKeys("junforpeace/HW7_AllureReports");
         $(".header-search-input").submit();
 
-        $(linkText("eroshenkoam/allure-example")).click();
-        $(partialLinkText("Issues")).click();
-        $(withText("#76")).click();
+        $(linkText("junforpeace/HW7_AllureReports")).click();
+        $("#issues-tab").should(Condition.visible);
 
     }
 }

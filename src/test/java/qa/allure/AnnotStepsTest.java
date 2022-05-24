@@ -13,8 +13,7 @@ import static org.openqa.selenium.By.partialLinkText;
 
 public class AnnotStepsTest {
 
-    public static final String REPO = "eroshenkoam/allure-example";
-    public static final int ISSUE_NUMBER = 76;
+    public static final String REPO = "junforpeace/HW7_AllureReports";
 
 
     @Test
@@ -25,8 +24,7 @@ public class AnnotStepsTest {
         steps.openMainPage();
         steps.searchRepo(REPO);
         steps.clickOnRepositoryLink(REPO);
-        steps.openIssuesTab();
-        steps.shouldSeeSomeIssue(ISSUE_NUMBER);
+        steps.shouldSeeSomeIssue();
         steps.attachScreen();
 
 
