@@ -23,7 +23,7 @@ public class WebStepsTest {
     @Step("Ищем в поиске репозиторий {repo}")
     public void searchRepo(String repo) {
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys(repo);
+        $(".header-search-input").setValue(repo);
         $(".header-search-input").submit();
 
     }

@@ -22,7 +22,7 @@ public class SelenideTest {
 
         open("https://github.com");
         $(".header-search-input").click();
-        $(".header-search-input").sendKeys("junforpeace/HW7_AllureReports");
+        $(".header-search-input").setValue("junforpeace/HW7_AllureReports");
         $(".header-search-input").submit();
 
         $(linkText("junforpeace/HW7_AllureReports")).click();

@@ -32,7 +32,7 @@ public class LambdaStepsTest {
 
         step("Ищем в поиске репозиторий " + REPO, () -> {
             $(".header-search-input").click();
-            $(".header-search-input").sendKeys(REPO);
+            $(".header-search-input").setValue(REPO);
             $(".header-search-input").submit();
         });
 
